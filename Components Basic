@@ -1,0 +1,38 @@
+component basically ek javascript ka function hota h jisse hum barbar use kr skte h
+Html m components ka name capital letter se suru hota h for exapmle:-<App></App>
+qki tb ye html element se differentiate krte h aur inko fr hum situation k hisab se render kr skte h
+
+
+Dekh component bnane k liye function aur class dono ka use kr skte h
+
+
+Example of component:-
+
+function Image(){
+    return (
+         <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg"  />
+    )
+}
+
+
+function DogCard(){
+ 
+    return(
+
+        //finally jo aap return krre ho woh ek single parent m binded hone chaiye
+        <div>
+            <h3>Bruno</h3>
+             <Image></Image>
+             <Image></Image>
+        </div>
+    )
+
+}
+//nested component jyadatar prefer ni kia jata h
+
+
+
+
+
+
+export default DogCard;
