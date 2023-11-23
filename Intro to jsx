@@ -1,0 +1,20 @@
+React m bhut sare transpilers hote means for changing jsx into equivalent javascript
+
+'jsx'  ek html jesa markup deta h
+for example:-
+ye humne component bnaya h woh ek function h 
+function App(){
+  return(
+//ye jsx h jo hum yha return k tym likhre h means jsx mtlb html jesa markup hota h  
+<div className="App">
+      <button id="btn">
+        <span>Submit</span>
+
+      </button>
+    </div>
+
+
+)
+ }
+
+aur components reusable hote h
