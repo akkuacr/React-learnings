@@ -1,0 +1,62 @@
+dekh React m components ko import aur export krte h 
+uske multiple tarike yeh hote h ki 
+1.default export 
+2.named export
+aur dono ko hi import krne ka tarika yeh h 
+function Image(){
+    return (
+        <div>
+            <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg"  />
+        </div>
+          
+    )
+}
+export default Image;
+
+//import k lie
+import Image from "./Image";
+*********************************************************************************************************************************************************************************
+
+aur named wale m 
+
+export function Image(){
+    return (
+        <div>
+            <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg"  />
+        </div>
+          
+    )
+}
+
+//import k lie
+import Image from "./Image";
+
+*****************************************************************************************************************************************************************************
+Aur dono ko ek sath v kr skte h
+
+function Dogcard(){
+    return (
+        <div>
+            <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg"  />
+        </div>
+          
+    )
+}
+
+export function Image(){
+    return (
+        <div>
+            <img src="https://thumbs.dreamstime.com/b/golden-retriever-dog-21668976.jpg"  />
+        </div>
+          
+    )
+}
+
+export deafult Dogcard;
+
+//import krne k lie
+
+import Dogcard,{Image} from "./Dogcard";
+
+
+
