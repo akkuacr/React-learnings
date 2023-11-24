@@ -1,0 +1,135 @@
+see you can wrap up jsx on fragments also instead using div
+for example:-
+function DogCard(){
+ 
+    return(
+
+        //finally jo aap return krre ho woh ek single parent m binded hone chaiye
+        <>
+            <h3>Bruno</h3>
+          
+        </>
+    )
+
+}
+
+
+**************************************************************************************************************************************************************************************************************************************************
+
+
+hum jsx m apne props pass kr skte h parents k through jo html m attribute ka kaam krte the woh yha props se ho jaega hum parent k through props bhejenge jo wha attribute ka kaam krenge
+ 
+//parent ne yeh bheja
+
+<DogCard name="Bruno" src ="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?cs=srgb&dl=pexels-chevanon-photography-1108099.jpg&fm=jpg" ></DogCard>
+      <DogCard name="tiger" src ="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?cs=srgb&dl=pexels-chevanon-photography-1108099.jpg&fm=jpg" ></DogCard>
+
+child m ese use krenge
+ function DogCard(props){
+ 
+    return(
+
+        //finally jo aap return krre ho woh ek single parent m binded hone chaiye
+        <>
+            <h3>{props.name}</h3>
+            <Image src ={props.src}/>
+        </>
+    )
+
+}
+
+
+
+***************************************************************************************************************************************************************************************************
+
+jsx curlies
+
+Dekh agr hume pura jsx props ki form m pass krna hi toh then hum yeh use krenge
+
+parent ne ese jsx bheja
+
+
+import Image from "./Image";
+import Name from "./Name";
+ function DogCard(props){
+ 
+    return(
+
+        //finally jo aap return krre ho woh ek single parent m binded hone chaiye
+        <>
+           <Name>
+             <h3> {props.name} </h3>   
+            </Name>
+            
+            <Image src ={props.src}/>
+        </>
+    )
+
+}
+
+//aur children ne ese destructure krke use kia
+
+function Name({ children}){
+
+    return <>{ children }</>
+
+}
+
+export default Name;
+
+
+agr apko koi v variable print krna ho ui pe aap jyadatar jsx curlies hi use krte ho
+
+for example :-
+function DogCard(props){
+    let title = "this is a Dog Card";
+    return(
+
+        //finally jo aap return krre ho woh ek single parent m binded hone chaiye
+        <>
+
+
+            <h2 >
+                {title}
+            </h2>
+ 
+        </>
+    )
+}
+
+
+jsx m apko style v object ki form m pass krni hogi jisme pehli curlies object k khud k liye hogi dusri jsx ko define krne k liye
+
+import Image from "./Image";
+import Name from "./Name";
+ function DogCard(props){
+    let title = "this is a Dog Card";
+    return(
+
+        //finally jo aap return krre ho woh ek single parent m binded hone chaiye
+        <>
+
+
+            <h2 style={
+                {fontSize:'10px',
+                 color:'red'
+                }
+                }>
+                {title}
+            </h2>
+
+
+           <Name>
+             <h3> {props.name} </h3>   
+            </Name>
+            
+            <Image src ={props.src}/>
+        </>
+    )
+
+}
+
+
+*******************************************************************************************************************************************
+
+
