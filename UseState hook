@@ -1,0 +1,57 @@
+Hooks are utility function that helps us in react
+useState hook ka basic introduction ye h
+
+ import {useState} from 'react';
+ let z= 10;
+
+function Counter(){
+     
+    
+   //ab use state ek array return krta h first one is variavle and second one ids functionjo variable ko change kr skta h
+   //aur setX ko aap argument bhej k change kr skte ho
+    const [x,setX] = useState(0);
+    const [y,setY] = useState(0);
+    //setX is also called state setter function jo state ko set krne k kaam ata h
+
+
+    return (<>
+        {/* React local variables(jo function k andar use hore) ko target ni krta so iske liye state variables use krete h function k bahar wale unke change ko react re-render krta h 
+            aur state variable bnane k liye ek hook provide krta h react 'use State'
+           
+           */}
+
+          {/* dekh jb component ko call krre toh woh refresh ho jaega ab z ke case m esa ho jara ki woh tvi value so krega jb component refresh krega means 'x' ko bdane se component refresh hus so 'z' dikha
+ */}
+
+            Count Z :{z}
+
+            <button onClick={()=>z+=1}>Inc</button>
+            <button onClick={()=>z-=1} >Dec</button>
+
+
+           <br />
+
+
+
+
+
+           Count X:{x}
+
+           <button onClick={()=>setX(x+1)}>Inc</button>
+           <button onClick={()=>setX(x+1)} >Dec</button>
+            
+            <br/>
+
+           Count Y:{y}
+
+           <button onClick={()=>setY(y+1)}>Inc</button>
+           <button onClick={()=>setY(y+1)} >Dec</button>
+
+
+
+
+    </>)
+
+}
+
+export default Counter;
