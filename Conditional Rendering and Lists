@@ -1,0 +1,47 @@
+Basic conditional rendering example
+
+
+
+ import {useState} from 'react';
+ 
+
+function Counter(){
+     
+    
+ 
+    const [x,setX] = useState(0);
+    
+    const [isEditing , setIsEditing] = useState(false);
+
+
+     let p1 ;
+  
+    return (<>
+
+         {/* conditional rendering mtlb condition ke hisab se component ko render krna */}
+          
+          
+          {/* for example */}
+           {/* Count X:{x} is {(x%2==0)? 'Even' : 'Odd'}
+
+           <button onClick={()=>setX(x+1)}>Inc</button>
+           <button onClick={()=>setX(x+1)} >Dec</button> */}
+
+         
+
+         {/* ab same to do list ka example  */}
+         
+        {    
+           (isEditing)?<input/> : <p>Some todo</p>   
+        }
+         
+
+          <button onClick={()=>setIsEditing(!isEditing)}>Click</button>
+          
+
+
+    </>)
+
+}
+
+export default Counter;
