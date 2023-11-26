@@ -1,0 +1,211 @@
+har html tag ke paas khud k attributes hote h  toh inka sole purpose yeh hota h additional property define krna same hume React k liye krna h
+so attribute ka kaam yha pe props krte h 
+
+parent Code:-
+import Avatar from "./Avatar";
+import Counter from "./Counter";
+import DogCard  from "./DogCard";
+
+import Image from "./Image";
+ 
+ function App(){
+  return(
+    <div className="App">
+    {/* //   <button id="btn">
+    //     <span>Submit</span>
+
+    //   </button>
+      
+    //   <DogCard name="Bruno" src ="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?cs=srgb&dl=pexels-chevanon-photography-1108099.jpg&fm=jpg" ></DogCard>
+    //   <DogCard name="tiger" src ="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?cs=srgb&dl=pexels-chevanon-photography-1108099.jpg&fm=jpg" ></DogCard> */}
+
+
+{/******************************************************************************* * yeh pehle use kia tha now we are starting hooks */}
+    
+   {/* <Counter/> */}
+
+
+
+   <Avatar
+     src ="https://hips.hearstapps.com/hmg-prod/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=1200:*"
+     width="100px"
+     height="100px"
+   />
+ 
+ <br />
+
+<Avatar
+     src ="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?cs=srgb&dl=pexels-chevanon-photography-1108099.jpg&fm=jpg"
+     width="100px"
+     height="100px"
+   />
+   <br />
+    <Avatar
+     src ="https://images.pexels.com/photos/1490908/pexels-photo-1490908.jpeg?cs=srgb&dl=pexels-svetozar-milashevich-1490908.jpg&fm=jpg"
+     width="100px"
+     height="100px"
+   />
+
+      
+    </div>
+  )
+ }
+
+
+
+export default App;
+
+
+
+//child code
+function Avatar(props){
+    //props bascially ek object hota h
+
+    return (
+        <>
+           <img src={props.src} width={props.width} heights={props.height}/>
+        </>
+    )
+}
+
+export default Avatar;
+
+//you can use this also
+function Avatar({src , width, height}){
+    //props bascially ek object hota h
+
+    return (
+        <>
+           <img src={src} width={width} heights={height}/>
+        </>
+    )
+}
+
+export default Avatar;
+
+
+
+***********************************************************************agr tumhe html k tags ko v props m bhejna ho toh kes bhejenge aur use kese krenge see it*******************************************
+parent code:-
+
+import Avatar from "./Avatar";
+import Counter from "./Counter";
+import DogCard  from "./DogCard";
+
+import Image from "./Image";
+ 
+ function App(){
+  return(
+    <div className="App">
+    {/* //   <button id="btn">
+    //     <span>Submit</span>
+
+    //   </button>
+      
+    //   <DogCard name="Bruno" src ="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?cs=srgb&dl=pexels-chevanon-photography-1108099.jpg&fm=jpg" ></DogCard>
+    //   <DogCard name="tiger" src ="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?cs=srgb&dl=pexels-chevanon-photography-1108099.jpg&fm=jpg" ></DogCard> */}
+
+
+{/******************************************************************************* * yeh pehle use kia tha now we are starting hooks */}
+    
+   {/* <Counter/> */}
+
+
+
+   <Avatar
+     src ="https://hips.hearstapps.com/hmg-prod/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=1200:*"
+     width="100px"
+     height="100px"
+   />
+ 
+ <br />
+
+<Avatar
+     src ="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?cs=srgb&dl=pexels-chevanon-photography-1108099.jpg&fm=jpg"
+     width="100px"
+     height="100px"
+   />
+   <br />
+    <Avatar
+     src ="https://images.pexels.com/photos/1490908/pexels-photo-1490908.jpeg?cs=srgb&dl=pexels-svetozar-milashevich-1490908.jpg&fm=jpg"
+     width="100px"
+     height="100px"
+   />
+    
+    <br />
+
+
+      {/* agr tumhe children ko hi as a props bhejna ho toh */}
+      
+      <Avatar
+      src ="https://images.pexels.com/photos/1490908/pexels-photo-1490908.jpeg?cs=srgb&dl=pexels-svetozar-milashevich-1490908.jpg&fm=jpg"
+     width="100px"
+     height="100px"
+    
+      >
+      <span>Child tag</span>
+      </Avatar>
+
+      
+    </div>
+  )
+ }
+
+
+
+export default App;
+
+child code for all:-
+function Avatar({src , width, height,children}){
+    //props bascially ek object hota h
+
+    return (
+        <>
+           <img src={src} width={width} heights={height}/>
+
+           {children}
+        </>
+    )
+}
+
+export default Avatar;
+
+
+///////////*******************************************************************************************************************************
+
+dekh list krne k liye key props ka use kr skte h aur uske liye index use krenge qki
+
+import { useState } from "react";
+import Avatar from "./Avatar";
+import Counter from "./Counter";
+import DogCard  from "./DogCard";
+
+import Image from "./Image";
+ 
+ function App(){
+
+  const [ todos ] = useState(['todo1','todo 2']);
+
+  return(
+    <>
+      {
+        todos.map((v,idx)=> <li key={idx}>{v}</li>
+        )
+
+      }
+     <p>hello</p>
+    </> 
+  )
+ }
+
+
+
+export default App;
+
+
+
+
+
+
+
+
