@@ -45,3 +45,70 @@ function Counter(){
 }
 
 export default Counter;
+
+
+// aur jsx k under hum if-else ni likh skte yeh baat acche se smj le
+
+// you can also this code instead of above
+
+
+import { useState } from 'react';
+
+function Counter() {
+  const [x, setX] = useState(0);
+  const [isEditing, setIsEditing] = useState(false);
+  let p1;
+
+  if (isEditing) {
+    p1 = <input />;
+  } else {
+    p1 = <p>Some todo</p>;
+  }
+
+  return (
+    <>
+      {p1}
+      <button onClick={() => setIsEditing(!isEditing)}>Click</button>
+    </>
+  );
+}
+
+export default Counter;
+
+
+
+**************************************************************************************************************************
+aur set function m aap array v use kr skte for example
+
+use state m apko agr apni array bnani ho aur usse krna ho toh aap ese use kr skte ho 
+
+
+ import {useState} from 'react';
+ 
+
+function Counter(){
+    
+    const [todos,setTodos] = useState(['todo1','todo2']);
+  
+    return (<>
+     
+        <ul>
+            {
+                todos.map((todo)=> <li>
+                    {todo}
+                </li>)
+            }
+
+        //aur yaad rkhna agr aap useState m  array use krre ho toh setTodos v array hi expect krta h
+
+            <button onClick={()=>setTodos([...todos,'another one'])}>Click</button>
+        </ul>
+
+    </>)
+
+}
+
+export default Counter;
+
+
+
